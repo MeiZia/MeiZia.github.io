@@ -169,14 +169,14 @@
     <article class="article">
   <div class="wrap">
     <section class="head">
-  <img   class="lazyload" data-original="https://pic.izhaoo.com/2017072705.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <img   class="lazyload" data-original="https://pic.izhaoo.com/20200718152122.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
   <div class="head-mask">
     <h1 class="head-title">Vultr+宝塔+Hexo+Git建博客-[2]租服务器</h1>
     <div class="head-info">
       <span class="post-info-item"><i class="iconfont iconcalendar"></i>October 23, 2020</span
         class="post-info-item">
       
-      <span class="post-info-item"><i class="iconfont iconfont-size"></i>1017</span>
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>1212</span>
     </div>
   </div>
 </section>
@@ -195,16 +195,20 @@
 <p>Hexo作为博客的框架，在本地安装配置写好之后，渲染成静态HTMl文件。<br>利用git将渲染好的静态文件push到服务器的仓库中。<br>再利用git-hooks自动将服务器中的仓库checkout到网站的根目录中。<br>设置nginx的root地址为网站的根目录，最后就可以访问到我们的博客啦！</p>
 <hr>
 <p>这篇文章是介绍步骤2，<strong>租服务器</strong>。</p>
-<p>国内有许多的的服务器可以使用，阿里云/腾讯云/华为云/百度云之类的。<br>学生的话还有减免活动，但是对于我这种懒人来说，这些要填写的信息实在过多。<br>好像还要备案，也不知道能不能使用国外的学生证。所以果断选择一个不需要过多信息的平台。</p>
+<p>国内有许多的服务器可以使用，阿里云/腾讯云/华为云/百度云之类的。<br>学生的话还有减免活动，但是对于我这种懒人来说，这些要填写的信息实在过多。<br>好像还要备案，也不知道能不能使用国外的学生证。所以果断选择一个不需要过多信息的平台。</p>
 <p>我这里使用的是<a target="_blank" rel="noopener" href="https://www.vultr.com/">Vultr。</a>这里是<a target="_blank" rel="noopener" href="https://www.whgps.cn/">vultr的中文站。</a></p>
-<p>我用的是充值10刀送50刀的活动！简直是太香了！<br>重点还能够支付宝支付！根本不用填什么信用卡信息，买它！<br>活动<a target="_blank" rel="noopener" href="https://www.vultr.com/promo/try50/?service=try50">链接在这里。</a><br>看网上说还有新用户注册之后充值5到以上送100刀，但是并没有找到这个活动的链接。</p>
+<p>我用的是充值10刀送50刀的活动！简直是太香了！</p>
+<p>重点还能够支付宝支付！根本不用填什么信用卡信息，买它！<br>活动<a target="_blank" rel="noopener" href="https://www.vultr.com/promo/try50/?service=try50">链接在这里。</a></p>
+<p>看网上说还有新用户注册之后充值5到以上送100刀，但是并没有找到这个活动的链接。</p>
+<p>（ps.现在，我在我的账号里面发现的确有这个活动。通过我的连接，新用户进行注册，<br>我可以获得25刀，新用户可以获得100刀。条件是新用户必须活跃30天以上，并且新用户充值最少25刀。<br>为什么当初我没找到别人发的链接，觉得自己亏了一个亿！）</p>
+<p>（pps.我的活动链接在这里！<br><a target="_blank" rel="noopener" href="https://www.vultr.com/?ref=8709435-6G">充25送100</a> –新用户你充值25刀然后得100刀，我可以得25刀;<br><a target="_blank" rel="noopener" href="https://www.vultr.com/?ref=8708575">充10啥也不送你，但我得10刀</a> –这个好鸡肋，你有钱就帮我点点这个）</p>
 <ol>
 <li><p>注册账号。如果你是点了上面充值10刀送50刀的活动链接的话，就是下面的这个界面了。<br>只需要按照步骤进行注册就好啦</p>
 <br/>
 <img src='/images/article/202010231/1vultrzhuce.png'>
 <br/><br/>
 </li>
-<li><p>选择服务器。注册好之后进入个人界面，点击左边product，再点击加好，就进入了Deploy New Instance页面。<br>这里我选择的是<u>cloud compute，tokyo，Centos 64bit，每个月5刀的服务器。</u>大家按照需要进行选择。<br>不过我在选完地点之后，只有5刀以上的服务器了。2.5刀的的确便宜，但是好像不太够用。</p>
+<li><p>选择服务器。注册好之后进入个人界面，点击左边product，再点击加好，<br>就进入了Deploy New Instance页面。这里我选择的是<u>cloud compute，tokyo，Centos 64bit，每个月5刀的服务器。</u><br>大家按照需要进行选择。不过我在选完地点之后，只有5刀以上的服务器了。2.5刀的的确便宜，但是好像不太够用。</p>
 <br/>
 <img src='/images/article/202010231/2deploy.png'>
 <br/><br/>
@@ -220,10 +224,8 @@
 
 </li>
 </ol>
-<p>####Tips：</p>
-<ol>
+<h4 id="Tips："><a href="#Tips：" class="headerlink" title="Tips："></a>Tips：</h4><ol>
 <li><p>检查一下服务器ip是否可以从国内访问。<br>点击这个<a target="_blank" rel="noopener" href="http://coolaf.com/tool/port">网站</a>，输入你的ip地址进去，如果是22端口开放就是没问题的。</p>
-<br/>
 <img src='/images/article/202010231/5port.png'>
 <br/><br/>
 如果端口全是关闭的，需要删除这个服务器，再新建一个就可以了。
@@ -233,12 +235,10 @@
 <br/><br/>
 </li>
 <li><p>查看自己服务器的余额。点击左边导航栏的billing就可以看到自己还剩多少钱。</p>
-<br/>
 <img src='/images/article/202010231/7billing.png'>
 <br/><br/>
 </li>
 <li><p>查看服务器具体信息</p>
-<br/>
 <img src='/images/article/202010231/8server.png'>
 <br/><br/>
 

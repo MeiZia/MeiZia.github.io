@@ -168,14 +168,14 @@
     <article class="article">
   <div class="wrap">
     <section class="head">
-  <img   class="lazyload" data-original="https://pic.izhaoo.com/2014031601.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <img   class="lazyload" data-original="https://pic.izhaoo.com/2017071602.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
   <div class="head-mask">
     <h1 class="head-title">Vultr+宝塔+Hexo+Git建博客-[5]Hexo建立博客</h1>
     <div class="head-info">
       <span class="post-info-item"><i class="iconfont iconcalendar"></i>October 23, 2020</span
         class="post-info-item">
       
-      <span class="post-info-item"><i class="iconfont iconfont-size"></i>4356</span>
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>4437</span>
     </div>
   </div>
 </section>
@@ -193,7 +193,7 @@
 <p><strong>【思路】</strong></p>
 <p>Hexo作为博客的框架，在本地安装配置写好之后，渲染成静态HTMl文件。<br>利用git将渲染好的静态文件push到服务器的仓库中。<br>再利用git-hooks自动将服务器中的仓库checkout到网站的根目录中。<br>设置nginx的root地址为网站的根目录，最后就可以访问到我们的博客啦！</p>
 <hr>
-<p>这篇文章是介绍步骤5：<strong>Hexo建立博客，配属到服务器</strong>。<br>终于到最后一步啦，也是最重要最麻烦的一步啦。</p>
+<h4 id="这篇文章是介绍步骤5：Hexo建立博客，配属到服务器。"><a href="#这篇文章是介绍步骤5：Hexo建立博客，配属到服务器。" class="headerlink" title="这篇文章是介绍步骤5：Hexo建立博客，配属到服务器。"></a>这篇文章是介绍步骤5：<strong>Hexo建立博客，配属到服务器</strong>。</h4><p>终于到最后一步啦，也是最重要最麻烦的一步啦。</p>
 <h3 id="一-本地安装和设置Hexo"><a href="#一-本地安装和设置Hexo" class="headerlink" title="一. 本地安装和设置Hexo"></a>一. 本地安装和设置Hexo</h3><ul>
 <li><p>首先需要在本地安装好git和node.js</p>
 <p>  <a target="_blank" rel="noopener" href="https://git-scm.com/download/mac">官网下载git</a></p>
@@ -211,7 +211,7 @@
 </li>
 </ul>
 <h3 id="二-服务器端设置git仓库"><a href="#二-服务器端设置git仓库" class="headerlink" title="二. 服务器端设置git仓库"></a>二. 服务器端设置git仓库</h3><ul>
-<li><p>新建一个用户，专门进行git服务</p>
+<li><p>新建一个用户，专门进行git操作</p>
 <figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">adduser </span>web_git</span><br><span class="line">passwd <span class="comment">#随便设置一下</span></span><br></pre></td></tr></table></figure></li>
 <li><p>给新建的web_git用户设置权限</p>
 <figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">chmod</span> <span class="number">740</span> /etc/sudoers</span><br><span class="line"><span class="comment"># 查看下面文件内容</span></span><br><span class="line"><span class="attribute">vim</span> /etc/sudoers</span><br><span class="line"><span class="comment"># 找到以下内容</span></span><br><span class="line"><span class="comment">## Allow root to run any commands anywhere</span></span><br><span class="line"><span class="attribute">root</span>    <span class="literal">ALL</span>=(<span class="literal">ALL</span>)     <span class="literal">ALL</span></span><br><span class="line"><span class="comment"># 在下面添加一行</span></span><br><span class="line"><span class="attribute">git</span> <span class="literal">ALL</span>=(<span class="literal">ALL</span>) <span class="literal">ALL</span></span><br><span class="line"><span class="comment"># 保存后改回权限</span></span><br><span class="line"><span class="attribute">chmod</span> <span class="number">400</span> /etc/sudoers</span><br></pre></td></tr></table></figure>
@@ -244,8 +244,9 @@
 <h3 id="Tips："><a href="#Tips：" class="headerlink" title="Tips："></a><u>Tips：</u></h3><blockquote>
 <ol>
 <li>/home/web_git/blog.git      #这里是服务器的git仓库</li>
-<li>/home/public/blog;          #这里是网站的根目录</li>
+<li>/home/public/blog          #这里是网站的根目录</li>
 <li>注意服务器上web_git用户的权限问题</li>
+<li>光配置/www/server/nginx/conf的root信息是不足够的，还要记得修改/www/server/panel/vhost/nginx/的root信息</li>
 </ol>
 </blockquote>
 <hr>
@@ -262,7 +263,7 @@
 <p>按照安装配置的说明,创建好json文件，以及data文件。<br>但是应该将data文件设置为_data。表示不解析目录，是hexo默认做素材的文件夹。</p>
 <hr>
 <br/>
-到这里最终的部署就完成啦！（完结撒花的快乐！）
+到这里最终的部署就完成啦！(完结撒花的快乐！)
 
 <p>一共花了两天的时间，从0开始到部署完没有报错，并写下了这系列满是<del>精彩</del>(血泪)的文章。<br>比起我第一次用github建博客用的时间少多了。<br>而且我痛下决心要把这个过程记录下来。写这些文章是复盘，不是我当时建的过程。<br>因为过程就是报错，头痛，想办法解决，再报错，再解决的过程啊。</p>
 <p>很高兴写下这篇记录。</p>

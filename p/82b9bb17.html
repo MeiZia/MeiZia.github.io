@@ -175,7 +175,7 @@
       <span class="post-info-item"><i class="iconfont iconcalendar"></i>October 23, 2020</span
         class="post-info-item">
       
-      <span class="post-info-item"><i class="iconfont iconfont-size"></i>953</span>
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>952</span>
     </div>
   </div>
 </section>
@@ -193,8 +193,7 @@
 <p><strong>【思路】</strong></p>
 <p>Hexo作为博客的框架，在本地安装配置写好之后，渲染成静态HTMl文件。<br>利用git将渲染好的静态文件push到服务器的仓库中。<br>再利用git-hooks自动将服务器中的仓库checkout到网站的根目录中。<br>设置nginx的root地址为网站的根目录，最后就可以访问到我们的博客啦！</p>
 <hr>
-<p>这篇文章是介绍步骤4：<strong>在服务器上搭建环境</strong>。</p>
-<h3 id="一-连接服务器"><a href="#一-连接服务器" class="headerlink" title="一. 连接服务器"></a>一. 连接服务器</h3><p>我直接使用的是mac的command line</p>
+<h4 id="这篇文章是介绍步骤4：在服务器上搭建环境。"><a href="#这篇文章是介绍步骤4：在服务器上搭建环境。" class="headerlink" title="这篇文章是介绍步骤4：在服务器上搭建环境。"></a>这篇文章是介绍步骤4：<strong>在服务器上搭建环境</strong>。</h4><h3 id="一-连接服务器"><a href="#一-连接服务器" class="headerlink" title="一. 连接服务器"></a>一. 连接服务器</h3><p>我直接使用的是mac的command line</p>
 <figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh <span class="symbol">root@</span>服务器ip地址</span><br></pre></td></tr></table></figure>
 <p>密码在vultr中可以直接复制过来，登陆成功之后如下图<br><img src='/images/article/202010233/1server.png'><br><br/></p>
 <h3 id="二-服务器安装git和宝塔"><a href="#二-服务器安装git和宝塔" class="headerlink" title="二. 服务器安装git和宝塔"></a>二. 服务器安装git和宝塔</h3><ul>
