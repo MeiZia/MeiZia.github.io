@@ -7,14 +7,19 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Archive - Meizi&#39;s Blog: 2019/2</title>
+  <title>Vultr+宝塔+Hexo+Git建博客-[3]解析域名 - Meizi&#39;s Blog</title>
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="google" content="notranslate" />
 
   
-  <meta name="keywords" content="undefined"> 
+  <meta name="keywords" content="undefined, 建网站,解析域名"> 
   
+  <meta name="description" content="【搭建博客的步骤】
+
+✅购买域名
+✅租服务器
+解析域名..."> 
   
   <meta name="author" content="Meizi"> 
 
@@ -106,7 +111,7 @@
 
 <nav class="navbar">
   <div class="left"></div>
-  <div class="center">归档</div>
+  <div class="center">Vultr+宝塔+Hexo+Git建博客-[3]解析域名</div>
   <div class="right">
     <i class="iconfont iconmenu j-navbar-menu"></i>
   </div>
@@ -159,67 +164,112 @@
   </div>
 </nav>
   <main id="main">
-  <section class="archive">
-    <div class="archive-container">
-      <div class="archive-post">
-        <h3 class="archive-total">归档: 8 篇</h3>
-        
-        
-        
-        <h3 class="archive-year">2020 年</h3>
-        
-        <div class="archive-item">
-          <a class="archive-date" href="/p/5a5b3d04.html">October 23</a>
-          <a class="archive-title" href="/p/5a5b3d04.html">Vultr+宝塔+Hexo+Git建博客-[5]Hexo建立博客</a>
-        </div>
-        
-        
-        <div class="archive-item">
-          <a class="archive-date" href="/p/82b9bb17.html">October 23</a>
-          <a class="archive-title" href="/p/82b9bb17.html">Vultr+宝塔+Hexo+Git建博客-[4]在服务器上搭建环境</a>
-        </div>
-        
-        
-        <div class="archive-item">
-          <a class="archive-date" href="/p/7d249b9c.html">October 23</a>
-          <a class="archive-title" href="/p/7d249b9c.html">Vultr+宝塔+Hexo+Git建博客-[3]解析域名</a>
-        </div>
-        
-        
-        <div class="archive-item">
-          <a class="archive-date" href="/p/866e8530.html">October 23</a>
-          <a class="archive-title" href="/p/866e8530.html">Vultr+宝塔+Hexo+Git建博客-[2]租服务器</a>
-        </div>
-        
-        
-        <div class="archive-item">
-          <a class="archive-date" href="/p/f3a37fca.html">October 23</a>
-          <a class="archive-title" href="/p/f3a37fca.html">Vultr+宝塔+Hexo+Git建博客-[1]购买域名</a>
-        </div>
-        
-        
-        <div class="archive-item">
-          <a class="archive-date" href="/p/6f9c2cf4.html">October 23</a>
-          <a class="archive-title" href="/p/6f9c2cf4.html">又是新的篇章</a>
-        </div>
-        
-        
-        <h3 class="archive-year">2019 年</h3>
-        
-        <div class="archive-item">
-          <a class="archive-date" href="/p/c1284aa.html">February 19</a>
-          <a class="archive-title" href="/p/c1284aa.html">告别东京：第一站|葛西临海公园</a>
-        </div>
-        
-        
-        <div class="archive-item">
-          <a class="archive-date" href="/p/606ec934.html">February 17</a>
-          <a class="archive-title" href="/p/606ec934.html">心累的建立了我的博客</a>
-        </div>
-        
-      </div>
+  <div class="container" id="container">
+    <article class="article">
+  <div class="wrap">
+    <section class="head">
+  <img   class="lazyload" data-original="https://pic.izhaoo.com/2017071602.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <div class="head-mask">
+    <h1 class="head-title">Vultr+宝塔+Hexo+Git建博客-[3]解析域名</h1>
+    <div class="head-info">
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>October 23, 2020</span
+        class="post-info-item">
+      
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>688</span>
     </div>
-  </section>
+  </div>
+</section>
+    <section class="main">
+      <section class="content">
+        <p><strong>【搭建博客的步骤】</strong></p>
+<ul>
+<li>✅<a target="_blank" rel="noopener" href="http://www.meizia.net/p/f3a37fca.html">购买域名</a></li>
+<li>✅<a target="_blank" rel="noopener" href="http://www.meizia.net/p/866e8530.html">租服务器</a></li>
+<li>解析域名</li>
+<li>在服务器上搭建环境</li>
+<li>Hexo建立博客，配属到服务器</li>
+</ul>
+<hr>
+<p><strong>【思路】</strong></p>
+<p>Hexo作为博客的框架，在本地安装配置写好之后，渲染成静态HTMl文件。<br>利用git将渲染好的静态文件push到服务器的仓库中。<br>再利用git-hooks自动将服务器中的仓库checkout到网站的根目录中。<br>设置nginx的root地址为网站的根目录，最后就可以访问到我们的博客啦！</p>
+<hr>
+<p>这篇文章是介绍步骤3：<strong>解析域名</strong>。</p>
+<p>现在我们有域名了，也有服务器了，但是我们需要将他们连接起来。<br>使得别人通过你的网址URL访问你的服务器。</p>
+<ol>
+<li>登陆freenom，查看my domains，点击manege domain。 <br/>
+<img src='/images/article/202010232/1mydomain.png'>
+<br/>
+然后点击manege freemon DNS
+<br/>
+<img src='/images/article/202010232/2mydomain.png'>
+<br/>
+more record添加一个新的记录
+<br/>
+<img src='/images/article/202010232/3mydomain.png'>
+<br/><br/>
+总共两条，一个name为空，一个填写WWW，terget分别为你的服务器的ip地址。
+<br/>
+<img src='/images/article/202010232/4mydomain.png'>
+<br/><br/>
+<u>Tips：保存freenom中的设置之后，可以使用命令行ping你的域名，如果没有ping
+成功，那就再等上一会。因为这里需要一段时间之后才能解析完成。</u></li>
+<li>登陆vultr账户，点击最右边的products，然后点击DNS选项。<br/>
+<img src='/images/article/202010232/5dns.png'>
+<br/><br/>
+点击加号，添加你的域名和服务器ip地址。
+(域名这里不用加上www，否则会有报错：Unable to add domain to DNS)
+<br/>
+<img src='/images/article/202010232/6dns.png'>
+<br/><br/></li>
+<li>设置DNS。点击加号，添加type为A，name为www，data为ip地址的一条记录。<br/>
+<img src='/images/article/202010232/7dns.png'>
+<img src='/images/article/202010232/8dns.png'>
+<br/><br/>
+
+
+</li>
+</ol>
+<p>到这里，通过你的域名就能指向到你的服务器啦！<br>之后才是真正很多踩坑的地方呀。</p>
+
+      </section>
+      <section class="extra">
+        
+        <ul class="copyright">
+  
+  <li><strong>本文作者：</strong>Meizi</li>
+  <li><strong>本文链接：</strong><a href="http://example.com/p/7d249b9c.html">http://example.com/p/7d249b9c.html</a></li>
+  <li><strong>版权声明：</strong>本博客所有文章均采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"
+      rel="external nofollow" target="_blank"> BY-NC-SA </a>许可协议，转载请注明出处！</li>
+  
+</ul>
+        
+        
+        
+  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BB%BA%E7%BD%91%E7%AB%99/" rel="tag">建网站</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A7%A3%E6%9E%90%E5%9F%9F%E5%90%8D/" rel="tag">解析域名</a></li></ul>
+
+        
+<nav class="nav">
+  
+    <a href="/p/82b9bb17.html"><i class="iconfont iconleft"></i>Vultr+宝塔+Hexo+Git建博客-[4]在服务器上搭建环境</a>
+  
+  
+    <a href="/p/866e8530.html">Vultr+宝塔+Hexo+Git建博客-[2]租服务器<i class="iconfont iconright"></i></a>
+  
+</nav>
+
+      </section>
+      
+      <section class="comments">
+  
+  <div class="btn" id="comments-btn">查看评论</div>
+  
+  
+</section>
+      
+    </section>
+  </div>
+</article>
+  </div>
 </main>
   <footer class="footer">
   <div class="footer-social">

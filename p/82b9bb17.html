@@ -7,16 +7,19 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Vultr+宝塔+Hexo+Git建博客-[1]购买域名 - Meizi&#39;s Blog</title>
+  <title>Vultr+宝塔+Hexo+Git建博客-[4]在服务器上搭建环境 - Meizi&#39;s Blog</title>
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="google" content="notranslate" />
 
   
-  <meta name="keywords" content="undefined, 建网站,买域名"> 
+  <meta name="keywords" content="undefined, 建网站,宝塔lnmp"> 
   
-  <meta name="description" content="搭建博客这条路我真的走的太久了
-从大学的时候 仰慕别人..."> 
+  <meta name="description" content="【搭建博客的步骤】
+
+✅购买域名
+✅租服务器
+✅解析域..."> 
   
   <meta name="author" content="Meizi"> 
 
@@ -108,7 +111,7 @@
 
 <nav class="navbar">
   <div class="left"></div>
-  <div class="center">Vultr+宝塔+Hexo+Git建博客-[1]购买域名</div>
+  <div class="center">Vultr+宝塔+Hexo+Git建博客-[4]在服务器上搭建环境</div>
   <div class="right">
     <i class="iconfont iconmenu j-navbar-menu"></i>
   </div>
@@ -165,71 +168,74 @@
     <article class="article">
   <div class="wrap">
     <section class="head">
-  <img   class="lazyload" data-original="https://pic.izhaoo.com/2017071603.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <img   class="lazyload" data-original="https://pic.izhaoo.com/20200718152045.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
   <div class="head-mask">
-    <h1 class="head-title">Vultr+宝塔+Hexo+Git建博客-[1]购买域名</h1>
+    <h1 class="head-title">Vultr+宝塔+Hexo+Git建博客-[4]在服务器上搭建环境</h1>
     <div class="head-info">
       <span class="post-info-item"><i class="iconfont iconcalendar"></i>October 23, 2020</span
         class="post-info-item">
       
-      <span class="post-info-item"><i class="iconfont iconfont-size"></i>1065</span>
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>953</span>
     </div>
   </div>
 </section>
     <section class="main">
       <section class="content">
-        <p>搭建博客这条路我真的走的太久了</p>
-<p>从大学的时候 仰慕别人能够建个自己的博客 分享生活和技术</p>
-<p>到去年自己利用github部署了一个博客 然后逐渐淡忘</p>
-<p>今年我又开始重新<del>燃烧自己</del>（其实是挖坑） 又新建了一个</p>
-<p>不过这次用的时间比较短 但也走了无数的<u>坑</u> 心累</p>
-<p>在此记录以下过程吧</p>
-<hr>
-<p><strong>【搭建博客的步骤】</strong></p>
+        <p><strong>【搭建博客的步骤】</strong></p>
 <ul>
-<li>购买域名</li>
-<li>租服务器</li>
-<li>解析域名</li>
+<li>✅<a target="_blank" rel="noopener" href="http://www.meizia.net/p/f3a37fca.html">购买域名</a></li>
+<li>✅<a target="_blank" rel="noopener" href="http://www.meizia.net/p/866e8530.html">租服务器</a></li>
+<li>✅<a target="_blank" rel="noopener" href="http://www.meizia.net/p/7d249b9c.html">解析域名</a></li>
 <li>在服务器上搭建环境</li>
 <li>Hexo建立博客，配属到服务器</li>
 </ul>
 <hr>
 <p><strong>【思路】</strong></p>
 <p>Hexo作为博客的框架，在本地安装配置写好之后，渲染成静态HTMl文件。<br>利用git将渲染好的静态文件push到服务器的仓库中。<br>再利用git-hooks自动将服务器中的仓库checkout到网站的根目录中。<br>设置nginx的root地址为网站的根目录，最后就可以访问到我们的博客啦！</p>
-<p>这篇文章就先从简单一点的，<strong>购买域名</strong>开始吧！</p>
-<p>じゃ、初めましょう！</p>
 <hr>
-<p>申请域名的网站有好多个，我用的是<a target="_blank" rel="noopener" href="https://www.freenom.com/zh/index.html">freenom。</a></p>
-<ol>
-<li>进入官方网站，先查看自己想用的域名是否可以用。<br>这里我随便查找了一个’web-free-name’，可以看到后缀为.tk/.ml/.ga/.cf/.gq<br>都是可以可以免费使用12个月的。而下面.com/.net/.org之类正规一点的就是要花钱买的。<br>我之前还用<a href="www.godaddy.com">godaddy</a>查看了以下，发现还是freenom上比较便宜。<br/>
-<img src='/images/article/20201023/1yemian.png'>
-<br/>
-<img src='/images/article/20201023/2yemian.png'>
-<br/><br/></li>
-<li>选择一个合适的域名。我选了一个.net结尾的，因为想着作为个人博客的话，<br>之后使用率可能会高一些，之后简历中想要用到，就选择了一个比较正规的。如果用免费的话，<br>可能人家花钱买了你的这个域名，你就用不了了。<br/>
-<img src='/images/article/20201023/3goumai.png'>
-<br/><br/>
- 加入购物车之后，点击上面绿色的那个完成按钮。
-<br/>
-<img src='/images/article/20201023/4goumai.png'>
-<br/><br/></li>
-<li>查看购买的项目。这里我们可以看到有个绿色的Use DNS，点击之后可以选择DNS服务，<br>这个先不选，之后再进行修改。右边可以看到这个域名1年6.71$。我的域名我买了两年的。<br>根据需要进行购买即可。<br/>
-<img src='/images/article/20201023/5goumai.png'>
-<br/><br/></li>
-<li>确认订单，然后付款就可以了。没有账号的，需要先登陆注册一个，可以直接使用谷歌账号<br>就可以了。然后进行谷歌邮箱的认证，输入一些基本个人信息，设置你的登陆密码。<br> 信息填写完成之后，完成购买。购买成功会再给你发一份邮件。<br/>
-<img src='/images/article/20201023/6goumai.png'>
-<br/><br/></li>
-<li> 查看自己购买的域名。可以点击上面的services下的My domins查看你购买的域名。<br>可以看到使用的期限和状态，以及是不是免费的。<br/>
-<img src='/images/article/20201023/7yuming.png'>
-<br/><br/>
-<br/><br/>
-<img src='/images/article/20201023/9yuming.png'>
-<br/><br/>
+<p>这篇文章是介绍步骤4：<strong>在服务器上搭建环境</strong>。</p>
+<h3 id="一-连接服务器"><a href="#一-连接服务器" class="headerlink" title="一. 连接服务器"></a>一. 连接服务器</h3><p>我直接使用的是mac的command line</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh <span class="symbol">root@</span>服务器ip地址</span><br></pre></td></tr></table></figure>
+<p>密码在vultr中可以直接复制过来，登陆成功之后如下图<br><img src='/images/article/202010233/1server.png'><br><br/></p>
+<h3 id="二-服务器安装git和宝塔"><a href="#二-服务器安装git和宝塔" class="headerlink" title="二. 服务器安装git和宝塔"></a>二. 服务器安装git和宝塔</h3><ul>
+<li>安装git<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum <span class="keyword">install</span> git </span><br></pre></td></tr></table></figure>
+
+
 
 </li>
-</ol>
-<p>到这里，购买域名的部分就结束了。<br>因为还没服务器地址，所以没办法配置DNS。<br>如果只是想玩玩的朋友可以选择一个免费的域名先用着哟～</p>
-<p>暂时还没有什么坑，秀一下我买的两年.net域名的账单。<br><br/><br><img src='/images/article/20201023/8yuming.png'><br><br/></p>
+</ul>
+<ul>
+<li><p>安装宝塔。</p>
+<p>  其实根据<a target="_blank" rel="noopener" href="https://www.vultr.com/docs/install-hexo-on-centos-7">官网</a> 的介绍，这里直接在服务器上配置gcc-c/gcc-c++/nginx就可以了。<br>但是我还是想看一个有界面的东西，而且<a target="_blank" rel="noopener" href="https://www.bt.cn/">宝塔</a> 推荐的lnmp可以说是建站的标配。<br>一键就能安装好。（但事实证明用了这个我之后踩了坑，找不到nginx的配置信息。之后再说吧）</p>
+<p>  这里用命令行直接install，安装的是6.0版本的。</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -<span class="keyword">y</span> wget &amp;&amp; wget -O install.<span class="keyword">sh</span> http://download.bt.<span class="keyword">cn</span>/install/install_6.<span class="number">0</span>.<span class="keyword">sh</span> &amp;&amp; <span class="keyword">sh</span> install.<span class="keyword">sh</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>开始安装。其中会询问你是否要安装Bt-Panel，选择yes即可。<br>安装成功之后会显示一个Bt-Panel的URL，以及用户名和密码。</p>
+<img src='/images/article/202010233/3baota.png'>
+<br/><br/>
+根据给出的URL登陆之后，要求你注册。
+然后显示安装套件的信息。选择LNMP，进行极速安装。
+<br/>
+<img src='/images/article/202010233/2baota.png'>
+<br/><br/>
+<u>Tips：安装完成之后会给FTP账号资料和数据库账号资料，这里都要把这些记下来。
+方便以后使用。</u>
+</li>
+<li><p>设置宝塔。<br>安装完成之后，就可以进入这个界面。</p>
+<img src='/images/article/202010233/4baota.png'>
+<br/><br/>
+点击右边的网站，就可以看到我们服务器上已经配置好的域名网址。
+<br/>
+<img src='/images/article/202010233/5baota.png'>
+<br/><br/>
+再点击根目录，可以查看到网页的index页面啦。
+<img src='/images/article/202010233/6baota.png'>
+<br/><br/>
+
+
+</li>
+</ul>
+<p>到这里，在浏览器上输入我们的网址就有内容显示出来了。<br>之后需要将hexo生成的静态文件上传到服务器上就完成部署了。</p>
 
       </section>
       <section class="extra">
@@ -237,7 +243,7 @@
         <ul class="copyright">
   
   <li><strong>本文作者：</strong>Meizi</li>
-  <li><strong>本文链接：</strong><a href="http://example.com/p/f3a37fca.html">http://example.com/p/f3a37fca.html</a></li>
+  <li><strong>本文链接：</strong><a href="http://example.com/p/82b9bb17.html">http://example.com/p/82b9bb17.html</a></li>
   <li><strong>版权声明：</strong>本博客所有文章均采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"
       rel="external nofollow" target="_blank"> BY-NC-SA </a>许可协议，转载请注明出处！</li>
   
@@ -245,15 +251,15 @@
         
         
         
-  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B9%B0%E5%9F%9F%E5%90%8D/" rel="tag">买域名</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BB%BA%E7%BD%91%E7%AB%99/" rel="tag">建网站</a></li></ul>
+  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9D%E5%A1%94lnmp/" rel="tag">宝塔lnmp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BB%BA%E7%BD%91%E7%AB%99/" rel="tag">建网站</a></li></ul>
 
         
 <nav class="nav">
   
-    <a href="/p/866e8530.html"><i class="iconfont iconleft"></i>Vultr+宝塔+Hexo+Git建博客-[2]租服务器</a>
+    <a href="/p/5a5b3d04.html"><i class="iconfont iconleft"></i>Vultr+宝塔+Hexo+Git建博客-[5]Hexo建立博客</a>
   
   
-    <a href="/p/6f9c2cf4.html">又是新的篇章<i class="iconfont iconright"></i></a>
+    <a href="/p/7d249b9c.html">Vultr+宝塔+Hexo+Git建博客-[3]解析域名<i class="iconfont iconright"></i></a>
   
 </nav>
 
