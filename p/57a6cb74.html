@@ -7,17 +7,19 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>再次告别-北陸-68 - Meizi&#39;s Blog</title>
+  <title>Vultr_centos中安转Neo4j数据库 - Meizi&#39;s Blog</title>
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="google" content="notranslate" />
 
   
+  <meta name="keywords" content=", 建网站,Neo4j"> 
   
   <meta name="description" content="
+下载neo4j社区版安装包
+ 下载链接
 
-
-这个月几乎没有怎么写日记感觉发生了许多许多的事情..."> 
+安装jav..."> 
   
   <meta name="author" content="Meizi"> 
 
@@ -109,7 +111,7 @@
 
 <nav class="navbar">
   <div class="left"></div>
-  <div class="center">再次告别-北陸-68</div>
+  <div class="center">Vultr_centos中安转Neo4j数据库</div>
   <div class="right">
     <i class="iconfont iconmenu j-navbar-menu"></i>
   </div>
@@ -166,31 +168,40 @@
     <article class="article">
   <div class="wrap">
     <section class="head">
-  <img   class="lazyload" data-original="/images/article/20201129/20201129fengmian.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <img   class="lazyload" data-original="/images/article/20201201/20201201fengmian2.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
   <div class="head-mask">
-    <h1 class="head-title">再次告别-北陸-68</h1>
+    <h1 class="head-title">Vultr_centos中安转Neo4j数据库</h1>
     <div class="head-info">
-      <span class="post-info-item"><i class="iconfont iconcalendar"></i>November 29, 2020</span
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>December 01, 2020</span
         class="post-info-item">
       
-      <span class="post-info-item"><i class="iconfont iconfont-size"></i>699</span>
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>1001</span>
     </div>
   </div>
 </section>
     <section class="main">
       <section class="content">
-        <img src='/images/article/20201129/202011290.jpg' width='650' height='400'>
-<br/><br/>
+        <ol>
+<li><p>下载neo4j社区版安装包</p>
+<p> 下载<a target="_blank" rel="noopener" href="https://neo4j.com/download-center/#community">链接</a></p>
+</li>
+<li><p>安装java</p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">java </span>-version <span class="comment"># 查看是否安装过java</span></span><br><span class="line">yum search <span class="keyword">java|grep </span><span class="keyword">jdk </span><span class="comment"># 查看yum中java的包</span></span><br><span class="line">yum <span class="keyword">install </span><span class="keyword">java-11-openjdk.x86_64 </span><span class="comment">#安转java，neo4j要求版本至少为11</span></span><br><span class="line"><span class="keyword">java </span>-version <span class="comment"># 安转成功后可以查看到版本号</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装neo4j</p>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">mkdir neo4j <span class="comment">//新建一个文件夹</span></span><br><span class="line">cd neo4j</span><br><span class="line">tar -xf neo4j-community<span class="number">-4.2</span><span class="number">.1</span>-unix.tar  <span class="comment">//解压安转包</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 修改其中的一些设置</span></span><br><span class="line">cd neo4j-community<span class="number">-4.2</span><span class="number">.1</span>/conf</span><br><span class="line">vim neo4j.conf </span><br><span class="line"></span><br><span class="line">#######修改内容开始########</span><br><span class="line"><span class="comment">//需要去掉注释的部分</span></span><br><span class="line">dbms.connectors.default_listen_address=<span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span></span><br><span class="line">dbms.connector.bolt.listen_address=:<span class="number">7687</span></span><br><span class="line">dbms.connector.http.listen_address=:<span class="number">7474</span></span><br><span class="line">dbms.connector.https.listen_address=:<span class="number">7473</span></span><br><span class="line">#######修改内容结束########</span><br><span class="line"></span><br><span class="line"><span class="comment">//设置neo4j环境设置</span></span><br><span class="line"><span class="keyword">export</span> NEO4J_HOME=/neo4j/neo4j-community<span class="number">-4.2</span><span class="number">.1</span></span><br><span class="line"><span class="keyword">export</span> PATH=$PATH:$NEO4J_HOME/bin</span><br><span class="line"></span><br><span class="line"><span class="comment">//开启neo4j</span></span><br><span class="line">cd neo4j-community<span class="number">-4.2</span><span class="number">.1</span>/bin</span><br><span class="line">./neo4j start</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p> <strong>ps：注意这里开启了三个端口。注意要放行这些端口。</strong></p>
+</li>
+</ol>
+<ol start="4">
+<li><p>浏览器页面访问。</p>
+<p>服务器ip：7474。<br>访问账号：neo4j，密码默认为：meo4j，之后提示修改密码。</p>
+</li>
+<li><p>导入已有的数据库</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//neo4j/bin下面先导出数据库</span></span><br><span class="line">.<span class="regexp">/neo4j-admin dump --database=neo4j --to=../</span>data<span class="regexp">/databases/</span>neo4j.db.<span class="keyword">dump</span></span><br><span class="line"><span class="comment">//neo4j/bin下面加载数据库</span></span><br><span class="line">neo4j-admin load --<span class="keyword">from</span>=neo4j.db.<span class="keyword">dump</span> --database=neo4j --force</span><br></pre></td></tr></table></figure>
 
-<p>这个月几乎没有怎么写日记<br>感觉发生了许多许多的事情<br>但在每天的check list上被记录下的也只有寥寥几个字而已<br><br/><br><img src='/images/article/20201129/202011292.jpg' width='650' height='400'><br><br/><br>最近天气越来越来冷 使得我有时会想念起在海南的日子<br>还有和许多朋友在一起的日子</p>
-<p>昨天晚上我又梦到叶子了<br>已经连续两天梦到她了<br>我可真的是个倔强的小孩 刚离开的时候从不联系<br>到现在也很少去主动联系<br>好像那种我们彼此分开走向不同的人生道路了之后 再也不会见面的决断<br>但我所理解的生活便是 如果我们不能在现实相接触<br>之后所有的联系也都是在回忆过去的那段时间罢了<br>回忆总是万般美好 可也只是回忆而已啊<br>可能我就是如此绝情的人吧<br><br/><br><img src='/images/article/20201129/202011291.jpg' width='650' height='400'><br><br/><br>难得的休息日在家里度过的时光</p>
-<p>晒了被子 做了饭 躺在床上晒着太阳 听着歌 有心无心的看看杂志<br>好久没有登陆的网易云给我推荐的净是日语歌</p>
-<p>点开关注的好友们 原来大家还在用这个软件听歌<br>又觉得没有走远 仿佛一转身还是可以热络起来<br>那些我没有坚持做下去的事情 还有珍视的人在替我做着<br>那些我差点舍去的人 还在我只要去主动就能原谅我的原地</p>
-<p>今年才注意到楼下种了两颗开花的树<br>一棵是金色桂花 一棵是红色山茶<br>一楼也搬来了新的住户 刚搬来有时移动家具的声音很吓人<br>10月中旬就再也没有见过小橘🍊<br>希望她还好好活着 能健健康康快快乐乐</p>
-<p>研究进行到最后的问卷调查 我在这个部分尤其的力不从心<br>拖拖拉拉 迟迟不想去做的阻力太大了<br>基本上研究室里和我同期要毕业的人都做的差不多了<br>我还差一点 使得11月的每周都在汇报自己进度<br>希望自己快点做完 到最后的收尾阶段吧</p>
-<p>今年过的好快 只剩下一个月了<br>有种想完成的却没有完成就想放弃的颓废感</p>
-<p>还是感谢所有没有离开我的人 感谢用真心换真心的每一刻</p>
-<p>— 2020.11.29 美子于北陸</p>
+</li>
+</ol>
 
       </section>
       <section class="extra">
@@ -198,7 +209,7 @@
         <ul class="copyright">
   
   <li><strong>本文作者：</strong>Meizi</li>
-  <li><strong>本文链接：</strong><a href="http://meizia.net/p/ddd96137.html">http://meizia.net/p/ddd96137.html</a></li>
+  <li><strong>本文链接：</strong><a href="http://meizia.net/p/57a6cb74.html">http://meizia.net/p/57a6cb74.html</a></li>
   <li><strong>版权声明：</strong>本博客所有文章均采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"
       rel="external nofollow" target="_blank"> BY-NC-SA </a>许可协议，转载请注明出处！</li>
   
@@ -206,15 +217,15 @@
         
         
         
-  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%86%8D%E6%AC%A1%E5%91%8A%E5%88%AB%E5%8C%97%E9%99%B8/" rel="tag">再次告别北陸</a></li></ul>
+  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Neo4j/" rel="tag">Neo4j</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BB%BA%E7%BD%91%E7%AB%99/" rel="tag">建网站</a></li></ul>
 
         
 <nav class="nav">
   
-    <a href="/p/d6f160e8.html"><i class="iconfont iconleft"></i>宝塔中配置一个服务器不同网站对应不同端口</a>
+    <a href="/p/77e2e9e1.html"><i class="iconfont iconleft"></i>宝塔部署Flask项目</a>
   
   
-    <a href="/p/36a55ece.html">KINDNESS-基础课-S0902-曲线是什么<i class="iconfont iconright"></i></a>
+    <a href="/p/d6f160e8.html">宝塔中配置一个服务器不同网站对应不同端口<i class="iconfont iconright"></i></a>
   
 </nav>
 
