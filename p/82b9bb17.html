@@ -61,7 +61,7 @@
   
   
   
-<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/xcode.min.css">
+<link rel="stylesheet" href="http://www.meizia.net/pic/highlight.css">
 
   
 
@@ -195,10 +195,10 @@
 <p>Hexo作为博客的框架，在本地安装配置写好之后，渲染成静态HTMl文件。<br>利用git将渲染好的静态文件push到服务器的仓库中。<br>再利用git-hooks自动将服务器中的仓库checkout到网站的根目录中。<br>设置nginx的root地址为网站的根目录，最后就可以访问到我们的博客啦！</p>
 <hr>
 <h4 id="这篇文章是介绍步骤4：在服务器上搭建环境。"><a href="#这篇文章是介绍步骤4：在服务器上搭建环境。" class="headerlink" title="这篇文章是介绍步骤4：在服务器上搭建环境。"></a>这篇文章是介绍步骤4：<strong>在服务器上搭建环境</strong>。</h4><h3 id="一-连接服务器"><a href="#一-连接服务器" class="headerlink" title="一. 连接服务器"></a>一. 连接服务器</h3><p>我直接使用的是mac的command line</p>
-<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh <span class="symbol">root@</span>服务器ip地址</span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs angelscript">ssh <span class="hljs-symbol">root@</span>服务器ip地址<br></code></pre></td></tr></table></figure>
 <p>密码在vultr中可以直接复制过来，登陆成功之后如下图<br><img src='/images/article/202010233/1server.png'><br><br/></p>
 <h3 id="二-服务器安装git和宝塔"><a href="#二-服务器安装git和宝塔" class="headerlink" title="二. 服务器安装git和宝塔"></a>二. 服务器安装git和宝塔</h3><ul>
-<li>安装git<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum <span class="keyword">install</span> git </span><br></pre></td></tr></table></figure>
+<li>安装git<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmake">yum <span class="hljs-keyword">install</span> git <br></code></pre></td></tr></table></figure>
 
 
 
@@ -208,7 +208,7 @@
 <li><p>安装宝塔。</p>
 <p>  其实根据<a target="_blank" rel="noopener" href="https://www.vultr.com/docs/install-hexo-on-centos-7">官网</a> 的介绍，这里直接在服务器上配置gcc-c/gcc-c++/nginx就可以了。<br>但是我还是想看一个有界面的东西，而且<a target="_blank" rel="noopener" href="https://www.bt.cn/">宝塔</a> 推荐的lnmp可以说是建站的标配。<br>一键就能安装好。（但事实证明用了这个我之后踩了坑，找不到nginx的配置信息。之后再说吧）</p>
 <p>  这里用命令行直接install，安装的是6.0版本的。</p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -<span class="keyword">y</span> wget &amp;&amp; wget -O install.<span class="keyword">sh</span> http://download.bt.<span class="keyword">cn</span>/install/install_6.<span class="number">0</span>.<span class="keyword">sh</span> &amp;&amp; <span class="keyword">sh</span> install.<span class="keyword">sh</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs vim">yum install -<span class="hljs-keyword">y</span> wget &amp;&amp; wget -O install.<span class="hljs-keyword">sh</span> http://download.bt.<span class="hljs-keyword">cn</span>/install/install_6.<span class="hljs-number">0</span>.<span class="hljs-keyword">sh</span> &amp;&amp; <span class="hljs-keyword">sh</span> install.<span class="hljs-keyword">sh</span><br></code></pre></td></tr></table></figure>
 </li>
 <li><p>开始安装。其中会询问你是否要安装Bt-Panel，选择yes即可。<br>安装成功之后会显示一个Bt-Panel的URL，以及用户名和密码。</p>
 <img src='/images/article/202010233/3baota.png'>
@@ -284,7 +284,7 @@
     
     
     <a href="https://github.com/Meizia " target="_blank" onMouseOver="this.style.color= '#24292E'"
-      onMouseOut="this.style.color='#33333D'">
+      onMouseOut="this.style.color=''">
       <i class="iconfont footer-social-item  icongithub-fill "></i>
     </a>
     
@@ -292,8 +292,8 @@
     
     
     
-    <a href="mailto:missmeizia@gmail.com " target="_blank" onMouseOver="this.style.color='#FFBE5B'"
-      onMouseOut="this.style.color='#33333D'">
+    <a href="mailto:missmeizia@gmail.com " target="_blank" onMouseOver="this.style.color='#FF3B00'"
+      onMouseOut="this.style.color=''">
       <i class="iconfont footer-social-item  iconmail"></i>
     </a>
     

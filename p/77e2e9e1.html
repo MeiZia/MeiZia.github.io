@@ -60,7 +60,7 @@
   
   
   
-<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/xcode.min.css">
+<link rel="stylesheet" href="http://www.meizia.net/pic/highlight.css">
 
   
 
@@ -184,9 +184,9 @@
         <ol>
 <li><p>导出flask程序中所用到的包</p>
 <p> 一般python中导出环境中的包，我们会使用</p>
- <figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip <span class="keyword">freeze</span> &gt;requirements.txt</span><br></pre></td></tr></table></figure>
+ <figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">pip <span class="hljs-keyword">freeze</span> &gt;requirements.txt<br></code></pre></td></tr></table></figure>
 <p> 如果只想导出项目所使用的包：</p>
- <figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">pip install pipreqs <span class="string">//</span>安转pipreqs的库</span><br><span class="line">pipreqs <span class="string">./</span> <span class="params">--encoding=utf-8</span> <span class="string">//</span>转到项目所在的目录，在当前文件夹中导出requirements.txt</span><br><span class="line"></span><br><span class="line"><span class="string">//</span>导出成功会显示</span><br><span class="line">INFO: Successfully saved requirements file in <span class="string">./requirements.txt</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+ <figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs jboss-cli">pip install pipreqs <span class="hljs-string">//</span>安转pipreqs的库<br>pipreqs <span class="hljs-string">./</span> <span class="hljs-params">--encoding=utf-8</span> <span class="hljs-string">//</span>转到项目所在的目录，在当前文件夹中导出requirements.txt<br><br><span class="hljs-string">//</span>导出成功会显示<br>INFO: Successfully saved requirements file in <span class="hljs-string">./requirements.txt</span><br><br></code></pre></td></tr></table></figure>
 </li>
 <li><p>上传flask项目到网站根目录，解压</p>
 </li>
@@ -203,7 +203,7 @@
  - 手动安装相关库。
 
 <p>   转到命令行，启动对应的虚拟环境，用pip安装requirements.txt。</p>
- <figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">source</span> 项目路径<span class="regexp">/项目名_venv/</span>bin/activate</span><br><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure>
+ <figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs gradle"><span class="hljs-keyword">source</span> 项目路径<span class="hljs-regexp">/项目名_venv/</span>bin/activate<br>pip install -r requirements.txt<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>添加映射到相关的域名。</p>
  <br/>
@@ -263,7 +263,7 @@
     
     
     <a href="https://github.com/Meizia " target="_blank" onMouseOver="this.style.color= '#24292E'"
-      onMouseOut="this.style.color='#33333D'">
+      onMouseOut="this.style.color=''">
       <i class="iconfont footer-social-item  icongithub-fill "></i>
     </a>
     
@@ -271,8 +271,8 @@
     
     
     
-    <a href="mailto:missmeizia@gmail.com " target="_blank" onMouseOver="this.style.color='#FFBE5B'"
-      onMouseOut="this.style.color='#33333D'">
+    <a href="mailto:missmeizia@gmail.com " target="_blank" onMouseOver="this.style.color='#FF3B00'"
+      onMouseOut="this.style.color=''">
       <i class="iconfont footer-social-item  iconmail"></i>
     </a>
     
