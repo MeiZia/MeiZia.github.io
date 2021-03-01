@@ -7,7 +7,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Vultr_centos中安转Neo4j数据库 - Meizi&#39;s Blog</title>
+  <title>Vultr_centos中安装Neo4j数据库 - Meizi&#39;s Blog</title>
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="google" content="notranslate" />
@@ -111,7 +111,7 @@
 
 <nav class="navbar">
   <div class="left"></div>
-  <div class="center">Vultr_centos中安转Neo4j数据库</div>
+  <div class="center">Vultr_centos中安装Neo4j数据库</div>
   <div class="right">
     <i class="iconfont iconmenu j-navbar-menu"></i>
   </div>
@@ -170,7 +170,7 @@
     <section class="head">
   <img   class="lazyload" data-original="/images/article/20201201/20201201fengmian2.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
   <div class="head-mask">
-    <h1 class="head-title">Vultr_centos中安转Neo4j数据库</h1>
+    <h1 class="head-title">Vultr_centos中安装Neo4j数据库</h1>
     <div class="head-info">
       <span class="post-info-item"><i class="iconfont iconcalendar"></i>December 01, 2020</span
         class="post-info-item">
@@ -186,10 +186,10 @@
 <p> 下载<a target="_blank" rel="noopener" href="https://neo4j.com/download-center/#community">链接</a></p>
 </li>
 <li><p>安装java</p>
-<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs mipsasm"><span class="hljs-keyword">java </span>-version <span class="hljs-comment"># 查看是否安装过java</span><br>yum search <span class="hljs-keyword">java|grep </span><span class="hljs-keyword">jdk </span><span class="hljs-comment"># 查看yum中java的包</span><br>yum <span class="hljs-keyword">install </span><span class="hljs-keyword">java-11-openjdk.x86_64 </span><span class="hljs-comment">#安转java，neo4j要求版本至少为11</span><br><span class="hljs-keyword">java </span>-version <span class="hljs-comment"># 安转成功后可以查看到版本号</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs mipsasm"><span class="hljs-keyword">java </span>-version <span class="hljs-comment"># 查看是否安装过java</span><br>yum search <span class="hljs-keyword">java|grep </span><span class="hljs-keyword">jdk </span><span class="hljs-comment"># 查看yum中java的包</span><br>yum <span class="hljs-keyword">install </span><span class="hljs-keyword">java-11-openjdk.x86_64 </span><span class="hljs-comment"># 安装java，neo4j要求版本至少为11</span><br><span class="hljs-keyword">java </span>-version <span class="hljs-comment"># 安装成功后可以查看到版本号</span><br></code></pre></td></tr></table></figure>
 </li>
 <li><p>安装neo4j</p>
-<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs clean">mkdir neo4j <span class="hljs-comment">//新建一个文件夹</span><br>cd neo4j<br>tar -xf neo4j-community<span class="hljs-number">-4.2</span><span class="hljs-number">.1</span>-unix.tar  <span class="hljs-comment">//解压安转包</span><br><br><span class="hljs-comment">// 修改其中的一些设置</span><br>cd neo4j-community<span class="hljs-number">-4.2</span><span class="hljs-number">.1</span>/conf<br>vim neo4j.conf <br><br>#######修改内容开始########<br><span class="hljs-comment">//需要去掉注释的部分</span><br>dbms.connectors.default_listen_address=<span class="hljs-number">0.0</span><span class="hljs-number">.0</span><span class="hljs-number">.0</span><br>dbms.connector.bolt.listen_address=:<span class="hljs-number">7687</span><br>dbms.connector.http.listen_address=:<span class="hljs-number">7474</span><br>dbms.connector.https.listen_address=:<span class="hljs-number">7473</span><br>#######修改内容结束########<br><br><span class="hljs-comment">//设置neo4j环境设置</span><br><span class="hljs-keyword">export</span> NEO4J_HOME=/neo4j/neo4j-community<span class="hljs-number">-4.2</span><span class="hljs-number">.1</span><br><span class="hljs-keyword">export</span> PATH=$PATH:$NEO4J_HOME/bin<br><br><span class="hljs-comment">//开启neo4j</span><br>cd neo4j-community<span class="hljs-number">-4.2</span><span class="hljs-number">.1</span>/bin<br>./neo4j start<br><br></code></pre></td></tr></table></figure>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs clean">mkdir neo4j # 新建一个文件夹<br>cd neo4j<br>tar -xf neo4j-community<span class="hljs-number">-4.2</span><span class="hljs-number">.1</span>-unix.tar  # 解压安转包<br><br># 修改其中的一些设置<br>cd neo4j-community<span class="hljs-number">-4.2</span><span class="hljs-number">.1</span>/conf<br>vim neo4j.conf <br><br>#######修改内容开始########<br># 需要去掉注释的部分<br>dbms.connectors.default_listen_address=<span class="hljs-number">0.0</span><span class="hljs-number">.0</span><span class="hljs-number">.0</span><br>dbms.connector.bolt.listen_address=:<span class="hljs-number">7687</span><br>dbms.connector.http.listen_address=:<span class="hljs-number">7474</span><br>dbms.connector.https.listen_address=:<span class="hljs-number">7473</span><br>#######修改内容结束########<br><br># 设置neo4j环境设置<br><span class="hljs-keyword">export</span> NEO4J_HOME=/neo4j/neo4j-community<span class="hljs-number">-4.2</span><span class="hljs-number">.1</span><br><span class="hljs-keyword">export</span> PATH=$PATH:$NEO4J_HOME/bin<br><br># 开启neo4j<br>cd neo4j-community<span class="hljs-number">-4.2</span><span class="hljs-number">.1</span>/bin<br>./neo4j start<br><br></code></pre></td></tr></table></figure>
 <p> <strong>ps：注意这里开启了三个端口。注意要放行这些端口。</strong></p>
 </li>
 </ol>
@@ -198,7 +198,7 @@
 <p>服务器ip：7474。<br>访问账号：neo4j，密码默认为：meo4j，之后提示修改密码。</p>
 </li>
 <li><p>导入已有的数据库</p>
-<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs gradle"><span class="hljs-comment">//neo4j/bin下面先导出数据库</span><br>.<span class="hljs-regexp">/neo4j-admin dump --database=neo4j --to=../</span>data<span class="hljs-regexp">/databases/</span>neo4j.db.<span class="hljs-keyword">dump</span><br><span class="hljs-comment">//neo4j/bin下面加载数据库</span><br>neo4j-admin load --<span class="hljs-keyword">from</span>=neo4j.db.<span class="hljs-keyword">dump</span> --database=neo4j --force<br></code></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-comment"># neo4j/bin下面先导出数据库</span><br>./neo4j-admin dump <span class="hljs-attribute">--database</span>=neo4j <span class="hljs-attribute">--to</span>=../data/databases/neo4j.db.dump<br><span class="hljs-comment"># neo4j/bin下面加载数据库</span><br>neo4j-admin load <span class="hljs-attribute">--from</span>=neo4j.db.dump <span class="hljs-attribute">--database</span>=neo4j --force<br></code></pre></td></tr></table></figure>
 
 </li>
 </ol>
